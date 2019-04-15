@@ -1,0 +1,226 @@
+<div class="main-section">
+  <div class="container" style="margin: 0 auto;">
+    <div class="main-section-data">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 pd-left-none no-pd">
+          <div class="main-left-sidebar no-margin">
+            <div class="user-data full-width">
+              <div class="user-profile">
+                <div class="username-dt">
+                  <div class="usr-pic">
+                    <img src="images/resources/user-pic.png" alt="" />
+                  </div>
+                </div>
+                <!--username-dt end-->
+                <div class="user-specs">
+                  <h3 *ngIf="User != null">{{ User.username }}</h3>
+                </div>
+              </div>
+              <!--user-profile end-->
+              <ul class="user-fw-status">
+                <li>
+                  <a
+                    *ngIf="User != null"
+                    href="#"
+                    [routerLink]="['profile', User.id]"
+                    title=""
+                    >View Profile</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--user-data end-->
+            <div class="suggestions full-width">
+              <div class="sd-title">
+                <h3>Suggestions</h3>
+                <i class="la la-ellipsis-v"></i>
+              </div>
+              <!--sd-title end-->
+              <div class="suggestions-list">
+                <div class="suggestion-usd">
+                  <img src="images/resources/s1.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>Jessica William</h4>
+                    <span>Graphic Designer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="suggestion-usd">
+                  <img src="images/resources/s2.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>John Doe</h4>
+                    <span>PHP Developer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="suggestion-usd">
+                  <img src="images/resources/s3.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>Poonam</h4>
+                    <span>Wordpress Developer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="suggestion-usd">
+                  <img src="images/resources/s4.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>Bill Gates</h4>
+                    <span>C &amp; C++ Developer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="suggestion-usd">
+                  <img src="images/resources/s5.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>Jessica William</h4>
+                    <span>Graphic Designer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="suggestion-usd">
+                  <img src="images/resources/s6.png" alt="" />
+                  <div class="sgt-text">
+                    <h4>John Doe</h4>
+                    <span>PHP Developer</span>
+                  </div>
+                  <span><i class="la la-plus"></i></span>
+                </div>
+                <div class="view-more">
+                  <a href="#" title="">View More</a>
+                </div>
+              </div>
+              <!--suggestions-list end-->
+            </div>
+            <!--suggestions end-->
+            <div class="tags-sec full-width">
+              <ul>
+                <li><a href="#" title="">Help Center</a></li>
+                <li><a href="#" title="">About</a></li>
+                <li><a href="#" title="">Privacy Policy</a></li>
+                <li><a href="#" title="">Community Guidelines</a></li>
+                <li><a href="#" title="">Cookies Policy</a></li>
+                <li><a href="#" title="">Career</a></li>
+                <li><a href="#" title="">Language</a></li>
+                <li><a href="#" title="">Copyright Policy</a></li>
+              </ul>
+              <div class="cp-sec">
+                <img src="images/logo2.png" alt="" />
+                <p><img src="images/cp.png" alt="" />Copyright 2017</p>
+              </div>
+            </div>
+            <!--tags-sec end-->
+          </div>
+          <!--main-left-sidebar end-->
+        </div>
+        <div class="col-lg-6 col-md-8 no-pd">
+          <div class="main-ws-sec">
+            <div class="post-topbar">
+              <textarea
+                [(ngModel)]="Post.Message"
+                class="form-control"
+              ></textarea>
+              {{ Post.Date }}
+              <div class="user-picy">
+                <img src="images/resources/user-pic.png" alt="" />
+              </div>
+              <div class="post-st">
+                <ul>
+                  <li>
+                    <button
+                      class="post_project btn btn-primary"
+                      (click)="SendPost()"
+                      title=""
+                    >
+                      Post
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <!--post-st end-->
+            </div>
+            <!--post-topbar end-->
+            <div class="posts-section">
+              <div *ngFor="let post of Posts">
+                <div class="post-bar">
+                  <div class="post_topbar">
+                    <div class="usy-dt">
+                      <img src="images/resources/us-pic.png" alt="" />
+                      <div>
+                        <h3>{{ post.user.login }} <span>3 min ago</span></h3>
+                      </div>
+                    </div>
+                    <div class="ed-opts">
+                      <a href="#" title="" class="ed-opts-open"
+                        ><i class="la la-ellipsis-v"></i
+                      ></a>
+                      <ul class="ed-options">
+                        <li><a href="#" title="">Edit Post</a></li>
+                        <li><a href="#" title="">Unsaved</a></li>
+                        <li><a href="#" title="">Unbid</a></li>
+                        <li><a href="#" title="">Close</a></li>
+                        <li><a href="#" title="">Hide</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="job_descp">
+                    <p style="font-size: 20px;">
+                      {{ post.message }}
+                    </p>
+                  </div>
+                  <div class="job-status-bar">
+                    <ul>
+                      <li>
+                        <div class="row">
+                          <h6 (click)="GetComments(post)">
+                            <a [routerLink]="">
+                              Comments
+                            </a>
+                          </h6>
+                        </div>
+                        <div>
+                          <div class="row" *ngIf="post.expanded">
+                            <textarea
+                              class="form-control"
+                              [(ngModel)]="post.comment.message"
+                              (keyup.enter)="SendComment(post)"
+                              class="form-control"
+                            ></textarea>
+                          </div>
+
+                          <div
+                            class="row rounded-circle"
+                            style="margin: 5px"
+                            *ngFor="let comment of post.comments"
+                          >
+                            <ul class="container">
+                              <li class="jumbotron" style="padding: 5px;">
+                                <p>
+                                  <a
+                                    [routerLink]="['profile', comment.user.id]"
+                                  >
+                                    <strong>
+                                      {{ comment.user.username }}
+                                    </strong>
+                                  </a>
+                                  {{ comment.message }}
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--suggestions-list end-->
+            </div>
+          </div>
+          <!--right-sidebar end-->
+        </div>
+      </div>
+    </div>
+    <!-- main-section-data end-->
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="page">
+  <!-- preloader -->
+  <div class="preloader" style="display: none;">
+    <div class="centrize full-width">
+      <div class="vertical-center">
+        <div class="spinner" style="display: none;">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- background -->
+  <div class="background gradient">
+    <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <!--
+			Container
+		-->
+  <div
+    class="container opened"
+    data-animation-in="fadeInLeft"
+    data-animation-out="fadeOutLeft"
+  >
+    <!--
+				Card - Started
+			-->
+    <div class="card-started" id="home-card">
+      <!--
+					Profile
+				-->
+      <div class="profile">
+        <!-- profile image -->
+        <div class="slide" style="background-image: url(images/bg.jpg);"></div>
+
+        <!-- profile titles -->
+        <div *ngIf="User != null" class="title">{{ User.username }}</div>
+
+        <!-- profile socials -->
+        <div class="social">
+          <a target="_blank" href="https://dribbble.com/"
+            ><span class="fab fa-dribbble"></span
+          ></a>
+          <a target="_blank" href="https://twitter.com/"
+            ><span class="fab fa-twitter"></span
+          ></a>
+          <a target="_blank" href="https://github.com/"
+            ><span class="fab fa-github"></span
+          ></a>
+          <a target="_blank" href="https://www.spotify.com/"
+            ><span class="fab fa-spotify"></span
+          ></a>
+          <a target="_blank" href="https://stackoverflow.com/"
+            ><span class="fab fa-stack-overflow"></span
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 
+				Card - About
+			-->
+    <div class="card-inner animated active" id="about-card">
+      <div
+        class="slimScrollDiv"
+        style="position: relative; overflow: hidden; width: auto;"
+      >
+        <div class="card-wrap" style="overflow: hidden; width: auto;">
+          <!-- 
+						About 
+					-->
+          <div class="content about">
+            <!-- title -->
+            <div class="title">About Me</div>
+
+            <!-- content -->
+            <div class="row">
+              <div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+                <div class="text-box">
+                  <p>
+                    I am Ryan Adlard, web designer from USA, California. I have
+                    rich experience in web site design and building and
+                    customization, also I am good at wordpress. I love to talk
+                    with you about our unique.
+                  </p>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="slimScrollBar"
+          style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 169.043px;"
+        ></div>
+        <div
+          class="slimScrollRail"
+          style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
